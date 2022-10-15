@@ -2,9 +2,9 @@ package com.mmt.support;
 
 public class FrameworkConstants {
 
-	private static final String CHROMEDRIVER = System.getProperty("user.dir")+ "/src/test/resources/drivers/ChromeDriver 90.0.4430.24.exe";
-	private static final String CONFIGPROPERTIES = System.getProperty("user.dir")+"/src/test/resources/config/config.properties";
-	private static final String TESTDATA = System.getProperty("user.dir")+"/src/test/resources/data/testdata.xlsx";
+	private static final String CHROMEDRIVER = System.getProperty("/src/test/resources/drivers/ChromeDriver 90.0.4430.24.exe");
+	private static final String CONFIGPROPERTIES = System.getProperty("/src/test/resources/config/config.properties");
+	private static final String TESTDATA = System.getProperty("/src/test/resources/data/testdata.xlsx");
 	
 	private static final int EXPLICITWAIT = 35;
 	private static final int IMPLICITWAIT = 25;
