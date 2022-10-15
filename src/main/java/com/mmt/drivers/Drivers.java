@@ -24,8 +24,10 @@ public class Drivers {
 		//System.setProperty("webdriver.chrome.driver", getChromedriver());
 		WebDriver driver;
 		WebDriverManager.chromedriver().driverVersion("105.0.5195.52").setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless", "--start-maximized","--ignore-certificate-errors", "--silent");
 		if(Objects.isNull(DriverManager.getDriver())) {
-			DriverManager.setDriver(new ChromeDriver());
+			DriverManager.setDriver(new ChromeDriver(options));
 		}
 		implicitlyWait();
 		maximizeBrowser();
