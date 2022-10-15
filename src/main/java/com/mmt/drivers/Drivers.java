@@ -7,12 +7,23 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 
 public class Drivers {
 
 	public static void initializeDriver() {
-		System.setProperty("webdriver.chrome.driver", getChromedriver());
+		//System.setProperty("webdriver.chrome.driver", getChromedriver());
+		WebDriver driver;
+		WebDriverManager.chromedriver().driverVersion("105.0.5195.52").setup();
 		if(Objects.isNull(DriverManager.getDriver())) {
 			DriverManager.setDriver(new ChromeDriver());
 		}
