@@ -23,11 +23,11 @@ public class Drivers {
 	public static void initializeDriver() {
 		//System.setProperty("webdriver.chrome.driver", getChromedriver());
 		WebDriver driver;
-		WebDriverManager.chromedriver().driverVersion("105.0.5195.52").setup();
+		WebDriverManager.chromedriver().driverVersion("106.0.5249.91").setup();
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless","--start-maximized","--ignore-certificate-errors", "--silent");
+		//options.addArguments("--headless","--start-maximized","--ignore-certificate-errors", "--silent");
 		if(Objects.isNull(DriverManager.getDriver())) {
-			DriverManager.setDriver(new ChromeDriver(options));
+			DriverManager.setDriver(new ChromeDriver());
 		}
 		implicitlyWait();
 		maximizeBrowser();
