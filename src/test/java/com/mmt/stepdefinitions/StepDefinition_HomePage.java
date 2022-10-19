@@ -46,7 +46,7 @@ public class StepDefinition_HomePage {
 	@When("I click on flights")
 	public void i_click_on_flights() throws InterruptedException {
 	    homePage = PageManager.getInstance().getHomePage();
-	    homePage.closePopup();
+	    //homePage.closePopup();
 	    Thread.sleep(2000);
 	    homePage.selectFlight();
 	    Thread.sleep(2000);
