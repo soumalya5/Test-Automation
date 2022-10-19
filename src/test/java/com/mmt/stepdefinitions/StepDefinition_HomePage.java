@@ -2,8 +2,11 @@ package com.mmt.stepdefinitions;
 
 import static com.mmt.support.FrameworkConstants.getHomepage;
 
+import java.sql.Time;
 import java.util.List;
 import java.util.Map;
+
+import org.openqa.selenium.By;
 
 import com.mmt.config.utils.ConfigProperties;
 import com.mmt.config.utils.PropertyUtils;
@@ -35,15 +38,19 @@ public class StepDefinition_HomePage {
 	
 	//The URL of MakeMyTrip website is retrieved from the properties file
 	@Given("I navigate to the MakemyTrip Website")
-	public void i_navigate_to() {
+	public void i_navigate_to() throws InterruptedException {
 		String makemytripUrl = PropertyUtils.get(ConfigProperties.URL);
 	    DriverManager.getDriver().get(makemytripUrl);
 	}
 
 	@When("I click on flights")
-	public void i_click_on_flights() {
+	public void i_click_on_flights() throws InterruptedException {
 	    homePage = PageManager.getInstance().getHomePage();
+	    homePage.closePopup();
+	    Thread.sleep(2000);
 	    homePage.selectFlight();
+	    Thread.sleep(2000);
+	    
 	}
 
 	@When("I select One Way Trip")
@@ -64,6 +71,8 @@ public class StepDefinition_HomePage {
 	@When("I choose departure date")
 	public void i_choose_departure_date() throws InterruptedException {
 	    homePage.choosedate(ExcelUtil.readDataFromExcel(getHomepage()));
+	    //DriverManager.getDriver().findElement(By.xpath("//li[@class=\"font12 blackText latoBold wrapFilter activeItem \"]")).click();
+	    Thread.sleep(5000);
 	}
 
 	@When("I click on search button")
