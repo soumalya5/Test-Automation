@@ -10,7 +10,7 @@ import com.mmt.support.waits.WaitStrategy;
 
 public class ReviewBookingPage extends BasePage {
 
-	private final By TXT_REVIEWBOOKING = By.xpath("//h4[text()='Review your booking']");
+	private final By TXT_REVIEWBOOKING = By.xpath("//h2[text()='Complete your booking']");
 	
 	
 	public String reviewBookingTextPresent() {
