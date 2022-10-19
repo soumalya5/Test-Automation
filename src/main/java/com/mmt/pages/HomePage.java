@@ -37,7 +37,7 @@ public class HomePage extends BasePage {
 	
 	
 	public void selectOneWayTrip() {
-		click(BODY,WaitStrategy.NONE);
+		//click(BODY,WaitStrategy.NONE);
 		click(RADIO_ONEWAY, WaitStrategy.CLICKABLE);
 	}
 	
