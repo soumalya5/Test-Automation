@@ -78,6 +78,7 @@ public class StepDefinition_HomePage {
 	@When("I click on search button")
 	public void i_click_on_search_button() {
 	    homePage.clickOnSearch();
+	    Thread.sleep(5000);
 	}
 
 	
