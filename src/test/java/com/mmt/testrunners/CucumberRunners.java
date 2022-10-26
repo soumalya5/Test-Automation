@@ -8,6 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/java/com/mmt/features",
 					glue = "com/mmt/stepdefinitions",
+					plugin = { "pretty", "html:target/cucumber-reports" },
 					monochrome = true)
 public class CucumberRunners {
 
