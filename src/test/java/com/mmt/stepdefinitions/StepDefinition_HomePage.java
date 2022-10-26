@@ -70,7 +70,7 @@ public class StepDefinition_HomePage {
 	//Fetching the testdata from Excel - demonstrating the usage of excel to maintain testdata
 	@When("I choose departure date")
 	public void i_choose_departure_date() throws InterruptedException {
-	    //homePage.choosedate(ExcelUtil.readDataFromExcel(getHomepage()));
+	    homePage.choosedate(ExcelUtil.readDataFromExcel(getHomepage()));
 	    //DriverManager.getDriver().findElement(By.xpath("//li[@class=\"font12 blackText latoBold wrapFilter activeItem \"]")).click();
 	    Thread.sleep(5000);
 	}
