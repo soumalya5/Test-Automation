@@ -9,4 +9,3 @@ Feature: MakeMyTrip
       | Pune   | Kolkata     |
     And I choose departure date
     And I click on search button
-    And I view prices of first airline
