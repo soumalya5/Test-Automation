@@ -58,7 +58,7 @@ public class HomePage extends BasePage {
 		HomePageData hp = new HomePageData(data);		
 		List<WebElement> dates = findElements(DT_DEPARTURE, WaitStrategy.PRESENT);		
 		for(WebElement date:dates) {
-			if(date.getAttribute("aria-label").contains("Oct 23 2022")) {
+			if(date.getAttribute("aria-label").contains("Oct 29 2022")) {
 				date.click();
 				break;
 			}
