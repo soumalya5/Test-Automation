@@ -10,5 +10,3 @@ Feature: MakeMyTrip
     And I choose departure date
     And I click on search button
     And I view prices of first airline
-    And I click on book now button
-    Then I should see the booking page being opened
