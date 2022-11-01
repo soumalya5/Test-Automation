@@ -24,7 +24,20 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: maven
-    - uses: browser-actions/setup-chrome@latest
-    - run: chrome --version
-    - name: Build with Maven
-      run: mvn clean test
+    - name: Start selenoid
+      uses: n-ton4/selenoid-github-action@master
+      id: start-selenoid
+      continue-on-error: false
+      with:
+          version: 1.10.1
+          args: -limit 10
+          browsers: chrome
+          last-versions: 1
+   # - uses: browser-actions/setup-chrome@latest
+   # - run: chrome --version
+   # - name: Build with Maven
+          run: mvn clean test
+   # - uses: browser-actions/setup-chrome@latest
+   # - run: chrome --version
+   # - name: Build with Maven
+   #   run: mvn clean test
