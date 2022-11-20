@@ -49,7 +49,7 @@ public class StepDefinition_HomePage {
 	    //homePage.closePopup();
 	    Thread.sleep(2000);
 	    homePage.selectFlight();
-	    Thread.sleep(2000);
+	    Thread.sleep(5000);
 	    
 	}
 
