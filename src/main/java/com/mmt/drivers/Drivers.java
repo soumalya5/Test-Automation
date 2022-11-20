@@ -30,7 +30,7 @@ public class Drivers {
 		//options.addArguments("--headless","--start-maximized","--ignore-certificate-errors", "--silent");
 		ChromeOptions options = new ChromeOptions();
 		options.setCapability("browserVersion", "107");
-		options.addArguments("--headless", "--start-maximized","--ignore-certificate-errors" );
+		//options.addArguments("--headless", "--start-maximized","--ignore-certificate-errors" );
 		if(Objects.isNull(DriverManager.getDriver())) {
 			//DriverManager.setDriver(new ChromeDriver());
 			try{
