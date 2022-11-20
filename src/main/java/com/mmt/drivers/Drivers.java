@@ -22,7 +22,7 @@ import java.util.*;
 
 public class Drivers {
 
-	public static void initializeDriver() {
+	public static void initializeDriver() throws MalformedURLException {
 		//System.setProperty("webdriver.chrome.driver", getChromedriver());
 		WebDriver driver;
 		//WebDriverManager.chromedriver().driverVersion("106.0.5249.91").setup();
