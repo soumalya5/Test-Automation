@@ -23,11 +23,15 @@ public class Drivers {
 	public static void initializeDriver() {
 		//System.setProperty("webdriver.chrome.driver", getChromedriver());
 		WebDriver driver;
-		WebDriverManager.chromedriver().driverVersion("106.0.5249.91").setup();
-		ChromeOptions options = new ChromeOptions();
+		//WebDriverManager.chromedriver().driverVersion("106.0.5249.91").setup();
+		//ChromeOptions options = new ChromeOptions();
 		//options.addArguments("--headless","--start-maximized","--ignore-certificate-errors", "--silent");
+		ChromeOptions options = new ChromeOptions();
+		options.setCapability("browserVersion", "107");
+		//options.addArguments("--headless", "--start-maximized","--ignore-certificate-errors" );
 		if(Objects.isNull(DriverManager.getDriver())) {
-			DriverManager.setDriver(new ChromeDriver());
+			//DriverManager.setDriver(new ChromeDriver());
+			DriverManager.setDriver( new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),options));
 		}
 		implicitlyWait();
 		maximizeBrowser();
