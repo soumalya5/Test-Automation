@@ -51,35 +51,5 @@ public class StepDefinition_HomePage {
 	    homePage.selectFlight();
 	    Thread.sleep(5000);
 	    
-	}
-
-	@When("I select One Way Trip")
-	public void i_select_one_way_trip() {
-	    homePage.selectOneWayTrip();
-	}
-
-	//This data is fetched from Cucumber datatable
-	@When("I choose <source> and <destination> location")
-	public void i_choose_source_and_destination_location(List<Map<String, String>> location) {
-	    String source = location.get(0).get("source");
-	    String dest = location.get(0).get("destination");
-	    	    
-	    homePage.chooseSourceAndDestinationCities(source, dest);
-	}
-
-	//Fetching the testdata from Excel - demonstrating the usage of excel to maintain testdata
-	@When("I choose departure date")
-	public void i_choose_departure_date() throws InterruptedException {
-	    //homePage.choosedate(ExcelUtil.readDataFromExcel(getHomepage()));
-	    //DriverManager.getDriver().findElement(By.xpath("//li[@class=\"font12 blackText latoBold wrapFilter activeItem \"]")).click();
-	    Thread.sleep(5000);
-	}
-
-	@When("I click on search button")
-	public void i_click_on_search_button() {
-	    homePage.clickOnSearch();
-	    
-	}
-
-	
+	}	
 }

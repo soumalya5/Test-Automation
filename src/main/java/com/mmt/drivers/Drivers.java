@@ -23,20 +23,14 @@ import java.util.*;
 public class Drivers {
 
 	public static void initializeDriver() {
-		//System.setProperty("webdriver.chrome.driver", getChromedriver());
-		WebDriver driver;
-		//WebDriverManager.chromedriver().driverVersion("106.0.5249.91").setup();
-		//ChromeOptions options = new ChromeOptions();
-		//options.addArguments("--headless","--start-maximized","--ignore-certificate-errors", "--silent");
-		ChromeOptions options = new ChromeOptions();
-		options.setCapability("browserVersion", "107");
-		//options.addArguments("--headless", "--start-maximized","--ignore-certificate-errors" );
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability("browserName", "chrome");
+		capabilities.setCapability("enableVNC", true);
+		capabilities.setCapability("enableVideo", false);
 		if(Objects.isNull(DriverManager.getDriver())) {
-			//DriverManager.setDriver(new ChromeDriver());
 			try{
-				DriverManager.setDriver( new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),options));
-			}catch(MalformedURLException ex){
-			
+				DriverManager.setDriver( new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities));
+			}catch(MalformedURLException ex){			
 				System.out.println("Incorrect url");
 			}
 		}
