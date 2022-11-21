@@ -41,3 +41,35 @@ jobs:
    # - run: chrome --version
    # - name: Build with Maven
    #   run: mvn clean test
+   
+    - name: Add Artifact to publish
+      run: |
+       cd src/test/resources/cucumber-reports/.
+       
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+       name: Cucumber Reports
+       path: cucumber-reports/
+       
+  deploy:
+   runs-on: ubuntu-latest
+   needs: build
+   environment:
+         name: github-pages
+         url: ${{steps.deployment.outputs.page_url}}
+         
+   steps:
+         - uses: actions/download-artifact@main
+           with:
+            name: Cucumber Reports
+            path: .
+         - uses: actions/configure-pages@v1
+         - uses: actions/upload-pages-artifact@v1
+           with:
+            path: .
+         - id: deployment
+           uses: actions/deploy-pages@main
+   
+  
+      
