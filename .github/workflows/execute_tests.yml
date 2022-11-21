@@ -50,7 +50,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
        name: Cucumber Reports
-       path: src/test/resources/cucumber-reports/.
+       path: src/test/resources/cucumber-reports/
        
   deploy:
    runs-on: ubuntu-latest
