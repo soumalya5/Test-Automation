@@ -4,6 +4,7 @@ on:
  repository_dispatch:
   types: [on-push]
  workflow_dispatch:
+  branches: ["Tanmoy-TestAutomation"] 
 
 jobs:
  run-automated-tests:
