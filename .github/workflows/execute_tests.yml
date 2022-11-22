@@ -87,5 +87,5 @@ jobs:
             path: .
             
          - id: deployment
-         - name: Deploy in Pages
+         - name: Upload Artifact in Pages
            uses: actions/deploy-pages@main
