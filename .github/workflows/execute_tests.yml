@@ -72,16 +72,16 @@ jobs:
          url: ${{steps.deployment.outputs.page_url}}
          
    steps:
-         - name: Download Artifact
+         
          - uses: actions/download-artifact@main
            with:
             name: Cucumber Reports
             path: .
             
-         - name: Configure Pages
+         
          - uses: actions/configure-pages@v1
          
-         - name: Upload Artifact in Pages
+         
          - uses: actions/upload-pages-artifact@v1
            with:
             path: .
