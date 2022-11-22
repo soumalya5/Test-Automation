@@ -20,7 +20,11 @@ jobs:
         distribution: 'adopt'
         cache: maven
         
-    - name: Start selenoid
+    - name: Store docker image cache
+      uses: satackey/action-docker-layer-caching@v0.0.11
+      continue-on-error: true 
+        
+    - name: Start selenoid server
       uses: n-ton4/selenoid-github-action@master
       id: start-selenoid
       continue-on-error: false
@@ -29,9 +33,22 @@ jobs:
           args: -limit 10
           browsers: chrome
           last-versions: 1
+      
+    - name: Restore Maven Cache
+      uses: skjolber/maven-cache-github-action@v1
+      continue-on-error: true
+      with:
+        step: restore
   
     - name: Build with Maven
-      run: mvn clean test
+      run: |
+         mvn clean test
+         
+    - name: Save Maven cache
+      uses: skjolber/maven-cache-github-action@v1
+      continue-on-error: true
+      with:
+       step: save
    
     - name: Add Artifact to publish
       run: |
