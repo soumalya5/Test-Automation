@@ -6,6 +6,10 @@ on:
   repository_dispatch:
     types: [on-push]
 
+permissions:
+      pages: write
+      id-token: write
+
 jobs:
   build:
     # This will spinup ubuntu based VM instance
