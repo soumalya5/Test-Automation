@@ -89,5 +89,5 @@ jobs:
             path: .
             
          - id: deployment
-         - name: Deploy in Pages
+         
            uses: actions/deploy-pages@main
