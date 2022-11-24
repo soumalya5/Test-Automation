@@ -1,4 +1,4 @@
-name: Execute Java sample testcases with Maven and publist report in github pages
+name: Execute Java testcases with Maven and publist report in github pages
 
 on:
   push:
